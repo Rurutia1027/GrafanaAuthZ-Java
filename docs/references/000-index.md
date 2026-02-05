@@ -36,3 +36,31 @@ AWS doesn't hava a single formal RFC, but the offiical AWS documentation describ
 - Google Zanzibar describes a highly scalable global authorization system used internally at Google, influencing many modern authorization platforms. (AuthZed) 
 - AWS IAM policy model is AWS's production-grade JSON policy language and evaluation logic used for service access control. 
 
+
+---
+
+# Trust & Key Discovery (related but not RFC)
+When identity system publish signing keys for JWT verification, they often use: 
+
+## JWT Set URL (typical OpenID Connect discovery)
+- Identity provider exposes: https://example.com/.well-known/jwks.json
+
+This is not a separate RFC but part of **OpenID Connect Discovery**. 
+
+OpenID Connect Discovery spec: https://openid.net/specs/openid-connect-discovery-1_0.html
+
+
+## Recommended reading path 
+Start here in order 
+### [OpenID Connect Core (conceptual identity + tokens)](https://openid.net/specs/openid-connect-discovery-1_0.html)
+
+### [JWT (RFC 7519)](https://www.rfc-editor.org/rfc/rfc7519) Token Format 
+
+### [JWS (RFC 7515)](https://www.rfc-editor.org/rfc/rfc7515) Signature of JWT 
+
+### [JWK + JWA (RFC 7517, RFC 7518)]
+- [JWK](https://www.rfc-editor.org/rfc/rfc7517) key format
+- [JWA](https://www.rfc-editor.org/rfc/rfc7518) algorithm 
+
+
+### [OIDC Discovery (for published JWKS)](https://openid.net/specs/openid-connect-discovery-1_0.html)
